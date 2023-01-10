@@ -52,7 +52,7 @@ def main():
         MessageHandler(filters.Filters.text, handle_user_input))
     updater.dispatcher.add_error_handler(handle_error)
     updater.start_webhook(listen="0.0.0.0",
-                          port=int(PORT),
+                          port=8443,
                           url_path=API_TOKEN)
     updater.bot.setWebhook(f'{TG_APP}/{API_TOKEN}')
     updater.idle()
