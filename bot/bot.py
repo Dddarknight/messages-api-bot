@@ -21,6 +21,8 @@ URL = f"{HEROKU_APP}/api/messages/tg-token/"
 
 PORT = os.environ.get('PORT', 5000)
 
+TG_APP = os.getenv('TG_APP')
+
 
 def start(update, context):
     update.message.reply_text('Please provide token')
@@ -52,7 +54,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=API_TOKEN)
-    updater.bot.setWebhook(f'{HEROKU_APP}/{API_TOKEN}')
+    updater.bot.setWebhook(f'{TG_APP}/{API_TOKEN}')
     updater.idle()
 
 
