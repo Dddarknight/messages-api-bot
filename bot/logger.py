@@ -14,7 +14,7 @@ def setup_logging():
     stream_handler = logging.StreamHandler(stream=sys.stdout)
     stream_handler.setLevel(logging.INFO)
     logger.addHandler(stream_handler)
-    file_handler = logging.FileHandler(filename='bot.log')
+    file_handler = logging.FileHandler(filename='bot_.log')
     file_handler.setLevel(logging.DEBUG)
     logger.addHandler(file_handler)
     return logger
