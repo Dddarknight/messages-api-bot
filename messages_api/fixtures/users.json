@@ -1,0 +1,19 @@
+{
+    "users": {
+      "user1": {
+        "first_name": "John",
+        "username": "johnblack",
+        "password": "*aaaccc3"
+      },
+      "user2": {
+        "first_name": "Bob",
+        "username": "bobgreen",
+        "password": "*aaaccc5"
+      },
+      "user3": {
+        "first_name": "Jack",
+        "username": "jackwhite",
+        "password": "*aaaccc7"
+      }
+    }
+}
