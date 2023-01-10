@@ -28,7 +28,7 @@ class TokenCreationTest(APITestCase):
         self.assertTrue(
             TgToken.objects.filter(tg_token=self.tg_token).exists())
         self.assertTrue(
-            TgToken.objects.get(tg_token=self.tg_token).user==self.user)
+            TgToken.objects.get(tg_token=self.tg_token).user == self.user)
         self.assertTrue(
             TgToken.objects.get(tg_token=self.tg_token).chat_id is None)
 
@@ -50,8 +50,8 @@ class TokenUpdateTest(APITestCase):
         }
         c.put(reverse_lazy('tg-token'), data)
         self.token.refresh_from_db()
-        self.assertTrue(self.token.user==self.user)
-        self.assertTrue(self.token.chat_id==self.chat_id)
+        self.assertTrue(self.token.user == self.user)
+        self.assertTrue(self.token.chat_id == self.chat_id)
 
 
 class MessageCreationTest(APITestCase):
@@ -77,7 +77,7 @@ class MessageCreationTest(APITestCase):
         self.assertTrue(
             Message.objects.filter(text=self.text).exists())
         self.assertTrue(
-            Message.objects.get(text=self.text).user==self.user)
+            Message.objects.get(text=self.text).user == self.user)
 
 
 class MessagesTest(APITestCase):
