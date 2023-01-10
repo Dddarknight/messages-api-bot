@@ -2,6 +2,7 @@ import os
 from datetime import timedelta
 from pathlib import Path
 from dotenv import load_dotenv
+import dj_database_url
 
 
 load_dotenv()
@@ -10,9 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = True
+IS_HEROKU = "DYNO" in os.environ
 
-ALLOWED_HOSTS = []
+DEBUG = True if not IS_HEROKU else False
+
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,12 +61,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'messages_api.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+DATABASE_URL = 'postgresql://<postgresql>' if IS_HEROKU else (
+    'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
+
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
