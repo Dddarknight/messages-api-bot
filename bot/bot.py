@@ -53,8 +53,8 @@ def main():
     updater.dispatcher.add_error_handler(handle_error)
     updater.start_webhook(listen="0.0.0.0",
                           port=8443,
-                          url_path=API_TOKEN)
-    updater.bot.setWebhook(f'{TG_APP}/{API_TOKEN}')
+                          url_path=API_TOKEN,
+                          webhook_url=f'{TG_APP}/{API_TOKEN}')
     updater.idle()
 
 
