@@ -19,7 +19,7 @@ HEROKU_APP = os.getenv('HEROKU_APP')
 
 URL = f"{HEROKU_APP}/api/messages/tg-token/"
 
-PORT = os.environ.get('PORT', 5000)
+PORT = os.environ.get('PORT', 8443)
 
 TG_APP = os.getenv('TG_APP')
 
