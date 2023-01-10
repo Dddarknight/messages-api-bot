@@ -5,7 +5,7 @@ Main steps:
 1. You need to register in the API app.
 2. You receive your jwt-token in the API app. Then you have to use it in headers of requests.
 3. You push your token to the API app. Also you push the same token to the bot to make a connection between API and the bot.
-4. You send the message to the API app. After that you receive this message in the bot.
+4. You send the message to the API app. After that you receive this message from the bot in the form "{Your-name}, I received a message from you. \n {your-message}".
 
 
 | Endpoint | Method | Description |
@@ -33,8 +33,11 @@ This project was built using these tools:
 
 ### App on Heroku (API and Bot):
 [![Heroku-API](https://pyheroku-badge.herokuapp.com/?app=shielded-thicket-58235)](https://shielded-thicket-58235.herokuapp.com/docs/)
+
 [![Heroku-Bot](https://pyheroku-badge.herokuapp.com/?app=messages-bot)](https://messages-bot.herokuapp.com/)
+
 [Bot](https://t.me/messages_factory_bot)
+
 
 ## Installation
 
