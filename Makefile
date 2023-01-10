@@ -17,3 +17,6 @@ test:
 
 migrate:
 	poetry run python manage.py migrate
+
+bot_:
+	poetry run python bot/bot.py
