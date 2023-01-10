@@ -54,7 +54,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                           port=8443,
                           url_path=API_TOKEN,
-                          webhook_url=f'{TG_APP}/{API_TOKEN}')
+                          webhook_url=f'{TG_APP}{API_TOKEN}')
     updater.idle()
 
 
