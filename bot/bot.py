@@ -14,9 +14,10 @@ logger = setup_logging()
 load_dotenv()
 
 API_TOKEN = os.getenv('TG_API_TOKEN')
-HOST = os.getenv('HOST')
-PORT = os.getenv('PORT')
-URL = f"http://{HOST}:{PORT}/api/messages/tg-token/"
+
+HEROKU_APP = os.getenv('HEROKU_APP')
+
+URL = f"{HEROKU_APP}/api/messages/tg-token/"
 
 
 def start(update, context):
@@ -31,7 +32,8 @@ def handle_user_input(update, context):
     token = update.message.text
     if not is_command(token):
         data = {'tg_token': token, 'chat_id': update.message.chat.id}
-        requests.put(URL, data=data)
+        response = requests.put(URL, data=data)
+        print(response.status_code, response.text)
 
 
 def handle_error(update, context):
